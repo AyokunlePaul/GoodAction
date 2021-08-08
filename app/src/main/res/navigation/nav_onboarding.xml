@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_onboarding"
+    app:startDestination="@id/fragment_splash">
+
+    <fragment
+        android:id="@+id/fragment_splash"
+        android:name="com.goodaction.presentation.onboarding.SplashFragment"
+        android:label="Splash Fragment"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/action_fragment_splash_to_fragment_welcome"
+            app:destination="@id/fragment_welcome" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_welcome"
+        android:name="com.goodaction.presentation.onboarding.WelcomeFragment"
+        android:label="Welcome Fragment"
+        tools:layout="@layout/fragment_welcome" />
+
+</navigation>

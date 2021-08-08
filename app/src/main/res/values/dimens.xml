@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Text sizes-->
+    <dimen name="good_action_normal_text_size">14sp</dimen>
+    <dimen name="good_action_large_text_size">18sp</dimen>
+    <dimen name="good_action_extra_large_text_size">30sp</dimen>
+    <dimen name="good_action_normal_button_text_size">14sp</dimen>
+
+    <!--    Margins-->
+    <dimen name="good_action_normal_margin">10dp</dimen>
+    <dimen name="good_action_normal_padding">10dp</dimen>
+    <dimen name="good_action_large_padding">15dp</dimen>
+    <dimen name="good_action_default_radius">8dp</dimen>
+</resources>

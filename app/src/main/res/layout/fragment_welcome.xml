@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".95" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_discover"
+        android:layout_width="270dp"
+        android:layout_height="270dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_welcome"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_discover" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_welcome"
+        style="@style/GoodActionText.Large.Extra"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_to_good_action"
+        app:layout_constraintBottom_toTopOf="@+id/tv_welcome_message"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/img_discover" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_welcome_message"
+        style="@style/GoodActionText"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_message"
+        app:layout_constraintBottom_toTopOf="@+id/btn_get_started"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/tv_welcome" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_get_started"
+        style="@style/GoodActionButton"
+        android:text="@string/get_started"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/tv_welcome_message" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_login"
+        style="@style/GoodActionButton"
+        android:text="@string/log_in"
+        android:textColor="@color/green"
+        app:backgroundTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/tv_or"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/btn_get_started" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#87FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@id/tv_or"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toTopOf="@id/tv_or" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_or"
+        style="@style/GoodActionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:padding="@dimen/good_action_large_padding"
+        android:text="@string/or"
+        android:textSize="@dimen/good_action_large_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/materialButton"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton"
+        style="?borderlessButtonStyle"
+        android:text="@string/explore"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/tv_or" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

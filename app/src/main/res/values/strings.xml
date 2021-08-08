@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Good Action</string>
+    <string name="welcome_to_good_action">Welcome to Goodaction</string>
+    <string name="welcome_message">A social community that allows givers to meet\nthe needs of people around them.</string>
+    <string name="get_started">Get Started</string>
+    <string name="log_in">Log in</string>
+    <string name="or">Or</string>
+    <string name="explore">Explore</string>
 </resources>
