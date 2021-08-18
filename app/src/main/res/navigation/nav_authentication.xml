@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_onboarding"
+    app:startDestination="@id/fragment_splash">
+
+    <fragment
+        android:id="@+id/fragment_splash"
+        android:name="com.goodaction.presentation.authentication.onboarding.SplashFragment"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/action_fragment_splash_to_fragment_welcome"
+            app:destination="@id/fragment_welcome" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_welcome"
+        android:name="com.goodaction.presentation.authentication.onboarding.WelcomeFragment"
+        tools:layout="@layout/fragment_welcome">
+
+        <action
+            android:id="@+id/action_fragment_welcome_fragment_getting_started"
+            app:destination="@id/fragment_getting_started" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_getting_started"
+        android:name="com.goodaction.presentation.authentication.getstarted.GettingStartedFragment"
+        tools:layout="@layout/fragment_getting_started">
+
+        <action
+            android:id="@+id/action_fragment_getting_started_to_fragment_verification_method"
+            app:destination="@id/fragment_verification_method" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_verification_method"
+        android:name="com.goodaction.presentation.authentication.verification.VerificationMethodFragment"
+        tools:layout="@layout/fragment_verification_method">
+
+        <argument
+            android:name="email"
+            android:defaultValue="ayokunle@hey.com"
+            app:argType="string" />
+
+        <argument
+            android:name="phone"
+            android:defaultValue="+2349011223344"
+            app:argType="string" />
+
+    </fragment>
+
+</navigation>

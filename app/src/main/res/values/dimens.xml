@@ -8,7 +8,11 @@
 
     <!--    Margins-->
     <dimen name="good_action_normal_margin">10dp</dimen>
+    <dimen name="good_action_big_margin">15dp</dimen>
+    <dimen name="good_action_large_margin">20dp</dimen>
+    <dimen name="good_action_extra_large_margin">30dp</dimen>
     <dimen name="good_action_normal_padding">10dp</dimen>
     <dimen name="good_action_large_padding">15dp</dimen>
+    <dimen name="good_action_extra_large_padding">30dp</dimen>
     <dimen name="good_action_default_radius">8dp</dimen>
 </resources>

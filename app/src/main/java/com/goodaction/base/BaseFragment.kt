@@ -4,7 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 
 abstract class BaseFragment <V: ViewBinding> : Fragment() {
@@ -21,6 +24,24 @@ abstract class BaseFragment <V: ViewBinding> : Fragment() {
     ): View? {
         _binding = getRootBinding(inflater, container)
         return binding.root
+    }
+
+    protected fun navigate(direction: NavDirections) {
+        findNavController().navigate(direction)
+    }
+
+    protected fun navigateUp() {
+        findNavController().navigateUp()
+    }
+
+    protected fun onBackPressed(action: () -> Unit) {
+        requireActivity().onBackPressedDispatcher.addCallback(
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    action.invoke()
+                }
+            }
+        )
     }
 
     override fun onDestroyView() {

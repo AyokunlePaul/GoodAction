@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".95" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_enter_otp"
+        style="@style/GoodActionText.Large.Extra"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/good_action_large_margin"
+        android:text="@string/enter_otp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_otp_sent"
+        style="@style/GoodActionText"
+        android:layout_marginTop="@dimen/good_action_normal_margin"
+        android:textColor="@color/text_gray"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/tv_enter_otp"
+        tools:text="An OTP was sent to the phone number you submitted" />
+
+    <TextView
+        android:id="@+id/tv_email_text"
+        style="@style/GoodActionText"
+        android:layout_marginTop="@dimen/good_action_normal_margin"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/tv_otp_sent"
+        tools:text="+234****90" />
+
+    <com.goodiebag.pinview.Pinview
+        android:id="@+id/pv_otp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/good_action_extra_large_margin"
+        app:inputType="number"
+        app:layout_constraintEnd_toEndOf="@id/guideline_two"
+        app:layout_constraintStart_toStartOf="@id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email_text"
+        app:pinBackground="@drawable/ic_pin_background"
+        app:pinLength="4"
+        tools:text="1234" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_code_expires"
+        style="@style/GoodActionText"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/good_action_large_margin"
+        android:text="@string/code_expires_in"
+        app:layout_constraintEnd_toStartOf="@+id/tv_expiry_countdown"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/pv_otp" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_expiry_countdown"
+        style="@style/GoodActionText"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="3dp"
+        android:textColor="@color/text_gray"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_code_expires"
+        app:layout_constraintTop_toTopOf="@+id/tv_code_expires"
+        tools:text="30 seconds..." />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_resend_otp"
+        android:layout_width="0dp"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_marginTop="@dimen/good_action_large_margin"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/tv_code_expires">
+
+        <TextView
+            style="@style/GoodActionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/didnt_get_code" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

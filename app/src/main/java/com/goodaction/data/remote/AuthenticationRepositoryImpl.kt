@@ -1,4 +1,4 @@
-package com.goodaction.remote
+package com.goodaction.data.remote
 
 class AuthenticationRepositoryImpl {
 }

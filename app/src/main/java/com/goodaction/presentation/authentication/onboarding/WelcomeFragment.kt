@@ -1,4 +1,4 @@
-package com.goodaction.presentation.onboarding
+package com.goodaction.presentation.authentication.onboarding
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -17,6 +17,13 @@ class WelcomeFragment : BaseFragment<FragmentWelcomeBinding>() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
+        onBackPressed { requireActivity().finish() }
+        with(binding) {
+            btnGetStarted.setOnClickListener {
+                val direction =
+                    WelcomeFragmentDirections.actionFragmentWelcomeFragmentGettingStarted()
+                navigate(direction)
+            }
+        }
     }
 }

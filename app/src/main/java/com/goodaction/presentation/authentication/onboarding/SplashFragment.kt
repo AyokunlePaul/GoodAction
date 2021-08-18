@@ -1,4 +1,4 @@
-package com.goodaction.presentation.onboarding
+package com.goodaction.presentation.authentication.onboarding
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -17,6 +17,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
+        val direction = SplashFragmentDirections.actionFragmentSplashToFragmentWelcome()
+        navigate(direction)
     }
 }
