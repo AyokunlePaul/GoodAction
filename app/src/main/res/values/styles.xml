@@ -10,6 +10,10 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="GoodActionText.Small" parent="GoodActionText">
+        <item name="android:textSize">@dimen/good_action_small_text_size</item>
+    </style>
+
     <style name="GoodActionText.Large" parent="GoodActionText">
         <item name="android:textSize">@dimen/good_action_large_text_size</item>
         <item name="fontFamily">@font/avenir_lt_pro_black</item>

@@ -36,10 +36,10 @@
         android:textColor="@color/text_gray"
         app:layout_constraintStart_toStartOf="@+id/guideline_one"
         app:layout_constraintTop_toBottomOf="@+id/tv_enter_otp"
-        tools:text="An OTP was sent to the phone number you submitted" />
+        android:text="@string/otp_sent_to_number" />
 
     <TextView
-        android:id="@+id/tv_email_text"
+        android:id="@+id/tv_phone"
         style="@style/GoodActionText"
         android:layout_marginTop="@dimen/good_action_normal_margin"
         android:textStyle="bold"
@@ -55,9 +55,11 @@
         app:inputType="number"
         app:layout_constraintEnd_toEndOf="@id/guideline_two"
         app:layout_constraintStart_toStartOf="@id/guideline_one"
-        app:layout_constraintTop_toBottomOf="@+id/tv_email_text"
+        app:forceKeyboard="true"
         app:pinBackground="@drawable/ic_pin_background"
         app:pinLength="4"
+        app:layout_constraintTop_toBottomOf="@+id/tv_phone"
+        app:textSize="@dimen/good_action_normal_text_size"
         tools:text="1234" />
 
     <com.google.android.material.textview.MaterialTextView

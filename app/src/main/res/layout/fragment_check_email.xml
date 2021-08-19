@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".95" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_new_email"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintBottom_toTopOf="@+id/tv_new_email_text"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_check_email" />
+
+    <TextView
+        android:id="@+id/tv_new_email_text"
+        style="@style/GoodActionText.Large"
+        android:text="@string/new_email"
+        android:layout_marginTop="@dimen/good_action_large_margin"
+        app:layout_constraintBottom_toTopOf="@+id/tv_email_sent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/img_new_email" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_email_sent"
+        style="@style/GoodActionText"
+        android:text="@string/email_sent_to"
+        android:textColor="@color/text_gray"
+        android:layout_marginTop="@dimen/good_action_large_margin"
+        app:layout_constraintBottom_toTopOf="@+id/tv_email"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/tv_new_email_text" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_email"
+        style="@style/GoodActionText.Small"
+        app:fontFamily="@font/avenir_lt_pro_heavy"
+        app:layout_constraintBottom_toTopOf="@+id/btn_check_email"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email_sent"
+        tools:text="ayokunle@goodaction.com" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_check_email"
+        style="@style/GoodActionButton"
+        android:text="@string/check_email"
+        app:backgroundTint="@color/black"
+        android:layout_marginTop="@dimen/good_action_extra_large_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,6 +21,10 @@
     <string name="how_to_verify_account">How do you want to verify your account?</string>
     <string name="enter_otp">Enter OTP</string>
     <string name="code_expires_in">Code expires in</string>
-    <string name="expiry">%d seconds</string>
+    <string name="expiry_countdown">%d seconds</string>
     <string name="didnt_get_code">Didn\'t get code? Resend OTP</string>
+    <string name="new_email">You\'ve got new email</string>
+    <string name="email_sent_to">We\'ve sent an email to</string>
+    <string name="check_email">Check my email</string>
+    <string name="otp_sent_to_number">An OTP was sent to the phone number you submitted</string>
 </resources>

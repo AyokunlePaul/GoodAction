@@ -129,6 +129,7 @@
                 style="@style/GoodActionText"
                 android:layout_marginStart="@dimen/good_action_normal_margin"
                 android:text="@string/phone"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/img_phone"
                 app:layout_constraintTop_toTopOf="@id/img_phone" />
 

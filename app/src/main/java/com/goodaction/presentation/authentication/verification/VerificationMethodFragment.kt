@@ -10,7 +10,7 @@ import com.goodaction.databinding.FragmentVerificationMethodBinding
 
 class VerificationMethodFragment : BaseFragment<FragmentVerificationMethodBinding>() {
 
-    private val verificationMethodFragmentArgs by navArgs<VerificationMethodFragmentArgs>()
+    private val navArg by navArgs<VerificationMethodFragmentArgs>()
 
     override fun getRootBinding(
         inflater: LayoutInflater,
@@ -21,8 +21,24 @@ class VerificationMethodFragment : BaseFragment<FragmentVerificationMethodBindin
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         with(binding) {
-            tvEmail.text = verificationMethodFragmentArgs.email
-            tvPhone.text = verificationMethodFragmentArgs.phone
+            tvEmail.text = navArg.email
+            tvPhone.text = navArg.phone
+
+            cvEmail.setOnClickListener {
+                val direction =
+                    VerificationMethodFragmentDirections.fragmentVerificationMethodToFragmentCheckEmail(
+                        navArg.email
+                    )
+                navigate(direction)
+            }
+
+            cvPhone.setOnClickListener {
+                val direction =
+                    VerificationMethodFragmentDirections.fragmentVerificationMethodToFragmentOtp(
+                        navArg.phone
+                    )
+                navigate(direction)
+            }
         }
     }
 }
