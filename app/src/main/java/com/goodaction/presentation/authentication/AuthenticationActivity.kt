@@ -3,7 +3,9 @@ package com.goodaction.presentation.authentication
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.goodaction.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AuthenticationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

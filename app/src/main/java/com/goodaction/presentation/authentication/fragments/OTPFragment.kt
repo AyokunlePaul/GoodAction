@@ -1,4 +1,4 @@
-package com.goodaction.presentation.authentication.otp
+package com.goodaction.presentation.authentication.fragments
 
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -9,9 +9,11 @@ import androidx.navigation.fragment.navArgs
 import com.goodaction.R
 import com.goodaction.base.BaseFragment
 import com.goodaction.databinding.FragmentOtpBinding
-import com.goodaction.utils.primitives.maskNumber
-import com.goodaction.utils.primitives.toSeconds
+import com.goodaction.utils.extensions.maskNumber
+import com.goodaction.utils.extensions.toSeconds
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OTPFragment : BaseFragment<FragmentOtpBinding>() {
 
     private val navArg by navArgs<OTPFragmentArgs>()

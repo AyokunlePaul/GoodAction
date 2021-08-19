@@ -1,4 +1,4 @@
-package com.goodaction.presentation.authentication.onboarding
+package com.goodaction.presentation.authentication.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.goodaction.base.BaseFragment
 import com.goodaction.databinding.FragmentWelcomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class WelcomeFragment : BaseFragment<FragmentWelcomeBinding>() {
 
     override fun getRootBinding(
@@ -22,6 +24,10 @@ class WelcomeFragment : BaseFragment<FragmentWelcomeBinding>() {
             btnGetStarted.setOnClickListener {
                 val direction =
                     WelcomeFragmentDirections.actionFragmentWelcomeFragmentGettingStarted()
+                navigate(direction)
+            }
+            btnLogin.setOnClickListener {
+                val direction = WelcomeFragmentDirections.actionFragmentWelcomeFragmentSignIn()
                 navigate(direction)
             }
         }

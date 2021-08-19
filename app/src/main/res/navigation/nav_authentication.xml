@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragment_splash"
-        android:name="com.goodaction.presentation.authentication.onboarding.SplashFragment"
+        android:name="com.goodaction.presentation.authentication.fragments.SplashFragment"
         tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_fragment_splash_to_fragment_welcome"
@@ -17,17 +17,20 @@
 
     <fragment
         android:id="@+id/fragment_welcome"
-        android:name="com.goodaction.presentation.authentication.onboarding.WelcomeFragment"
+        android:name="com.goodaction.presentation.authentication.fragments.WelcomeFragment"
         tools:layout="@layout/fragment_welcome">
         <action
             android:id="@+id/action_fragment_welcome_fragment_getting_started"
             app:destination="@id/fragment_getting_started" />
+        <action
+            android:id="@+id/action_fragment_welcome_fragment_sign_in"
+            app:destination="@id/fragment_sign_in" />
 
     </fragment>
 
     <fragment
         android:id="@+id/fragment_getting_started"
-        android:name="com.goodaction.presentation.authentication.getstarted.GettingStartedFragment"
+        android:name="com.goodaction.presentation.authentication.fragments.GettingStartedFragment"
         tools:layout="@layout/fragment_getting_started">
         <action
             android:id="@+id/action_fragment_getting_started_to_fragment_verification_method"
@@ -35,8 +38,13 @@
     </fragment>
 
     <fragment
+        android:id="@+id/fragment_sign_in"
+        android:name="com.goodaction.presentation.authentication.fragments.SignInFragment"
+        tools:layout="@layout/fragment_sign_in" />
+
+    <fragment
         android:id="@+id/fragment_verification_method"
-        android:name="com.goodaction.presentation.authentication.verification.VerificationMethodFragment"
+        android:name="com.goodaction.presentation.authentication.fragments.VerificationMethodFragment"
         tools:layout="@layout/fragment_verification_method">
         <argument
             android:name="email"
@@ -56,7 +64,7 @@
 
     <fragment
         android:id="@+id/fragment_otp"
-        android:name="com.goodaction.presentation.authentication.otp.OTPFragment"
+        android:name="com.goodaction.presentation.authentication.fragments.OTPFragment"
         tools:layout="@layout/fragment_otp">
         <argument
             android:name="phone"
@@ -66,7 +74,7 @@
 
     <fragment
         android:id="@+id/fragment_check_email"
-        android:name="com.goodaction.presentation.authentication.email.CheckEmailFragment"
+        android:name="com.goodaction.presentation.authentication.fragments.CheckEmailFragment"
         tools:layout="@layout/fragment_check_email">
         <argument
             android:name="email"

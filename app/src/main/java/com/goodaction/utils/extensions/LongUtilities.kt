@@ -1,4 +1,4 @@
-package com.goodaction.utils.primitives
+package com.goodaction.utils.extensions
 
 import java.util.concurrent.TimeUnit
 

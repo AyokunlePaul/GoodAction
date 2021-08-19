@@ -23,6 +23,7 @@ abstract class BaseFragment <V: ViewBinding> : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = getRootBinding(inflater, container)
+        onBackPressed()
         return binding.root
     }
 
@@ -34,11 +35,11 @@ abstract class BaseFragment <V: ViewBinding> : Fragment() {
         findNavController().navigateUp()
     }
 
-    protected fun onBackPressed(action: () -> Unit) {
+    protected fun onBackPressed(action: (() -> Unit)? = null) {
         requireActivity().onBackPressedDispatcher.addCallback(
-            object : OnBackPressedCallback(true) {
+            viewLifecycleOwner, object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    action.invoke()
+                    action?.let { it() } ?: navigateUp()
                 }
             }
         )
