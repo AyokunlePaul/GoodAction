@@ -28,7 +28,7 @@ class VerificationMethodFragment : BaseFragment<FragmentVerificationMethodBindin
 
             cvEmail.setOnClickListener {
                 val direction =
-                    VerificationMethodFragmentDirections.fragmentVerificationMethodToFragmentCheckEmail(
+                    VerificationMethodFragmentDirections.actionFragmentVerificationMethodToFragmentCheckEmail(
                         navArg.email
                     )
                 navigate(direction)
@@ -36,8 +36,9 @@ class VerificationMethodFragment : BaseFragment<FragmentVerificationMethodBindin
 
             cvPhone.setOnClickListener {
                 val direction =
-                    VerificationMethodFragmentDirections.fragmentVerificationMethodToFragmentOtp(
-                        navArg.phone
+                    VerificationMethodFragmentDirections.actionFragmentVerificationMethodToFragmentOtp(
+                        phone = navArg.phone,
+                        from = OTPFragment.FROM_SIGN_UP
                     )
                 navigate(direction)
             }

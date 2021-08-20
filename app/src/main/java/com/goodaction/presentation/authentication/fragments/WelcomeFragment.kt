@@ -23,11 +23,11 @@ class WelcomeFragment : BaseFragment<FragmentWelcomeBinding>() {
         with(binding) {
             btnGetStarted.setOnClickListener {
                 val direction =
-                    WelcomeFragmentDirections.actionFragmentWelcomeFragmentGettingStarted()
+                    WelcomeFragmentDirections.actionFragmentWelcomeToFragmentGettingStarted()
                 navigate(direction)
             }
             btnLogin.setOnClickListener {
-                val direction = WelcomeFragmentDirections.actionFragmentWelcomeFragmentSignIn()
+                val direction = WelcomeFragmentDirections.actionFragmentWelcomeToFragmentSignIn()
                 navigate(direction)
             }
         }

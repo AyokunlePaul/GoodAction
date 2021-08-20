@@ -208,4 +208,41 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/tv_forgot_password"
+        style="@style/GoodActionText"
+        android:layout_marginTop="@dimen/good_action_normal_margin"
+        android:text="@string/forgotten_password"
+        android:textColor="@color/green"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintTop_toBottomOf="@+id/il_password" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_login"
+        style="@style/GoodActionButton"
+        android:layout_marginTop="@dimen/good_action_extra_large_margin"
+        android:text="@string/log_in"
+        app:backgroundTint="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_two"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_create_account"
+        style="@style/GoodActionCard.Clickable"
+        app:cardElevation="0dp"
+        android:layout_marginTop="@dimen/good_action_normal_margin"
+        app:layout_constraintEnd_toEndOf="@id/guideline_two"
+        app:layout_constraintStart_toStartOf="@id/guideline_one"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login">
+
+        <TextView
+            style="@style/GoodActionText"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:text="@string/new_to_goodaction" />
+
+    </com.google.android.material.card.MaterialCardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

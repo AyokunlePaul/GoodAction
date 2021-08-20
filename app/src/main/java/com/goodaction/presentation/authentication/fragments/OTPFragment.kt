@@ -35,6 +35,12 @@ class OTPFragment : BaseFragment<FragmentOtpBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         with(binding) {
             tvPhone.text = navArg.phone.maskNumber()
+            pvOtp.setPinViewEventListener { _, _ ->
+                if (navArg.from == FROM_FORGOT_PASSWORD) {
+                    val direction = OTPFragmentDirections.actionFragmentOtpToFragmentResetPassword()
+                    navigate(direction)
+                }
+            }
         }
         timer.start()
     }
@@ -42,5 +48,10 @@ class OTPFragment : BaseFragment<FragmentOtpBinding>() {
     override fun onDestroyView() {
         timer.cancel()
         super.onDestroyView()
+    }
+
+    companion object {
+        const val FROM_SIGN_UP = 0
+        const val FROM_FORGOT_PASSWORD = 1
     }
 }

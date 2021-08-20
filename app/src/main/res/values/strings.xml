@@ -31,4 +31,20 @@
     <string name="welcome">Welcome</string>
     <string name="login_to_account">Login to your account</string>
     <string name="or_login_with">Or login with</string>
+
+    <!--Facebook details-->
+    <string name="facebook_app_id">4141042546011623</string>
+    <string name="fb_login_protocol_scheme">fb4141042546011623</string>
+    <string name="forgotten_password"><u>Forgot Password?</u></string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="new_to_goodaction">New to Goodaction? <u>Create account</u></string>
+    <string name="medium_to_recover_password">Select a medium to recover your password</string>
+    <string name="enter_the_detail">Enter the %s associated with your account</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="enter_new_password">Please enter a new password</string>
+    <string name="complete">Complete</string>
+    <string name="password_reset_successful">Password Reset Successful</string>
+    <string name="you_reset_your_password">You have successfully reset your password.</string>
+    <string name="continue_text">Continue</string>
+
 </resources>

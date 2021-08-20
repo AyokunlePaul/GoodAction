@@ -12,7 +12,6 @@
         <action
             android:id="@+id/action_fragment_splash_to_fragment_welcome"
             app:destination="@id/fragment_welcome" />
-
     </fragment>
 
     <fragment
@@ -20,12 +19,11 @@
         android:name="com.goodaction.presentation.authentication.fragments.WelcomeFragment"
         tools:layout="@layout/fragment_welcome">
         <action
-            android:id="@+id/action_fragment_welcome_fragment_getting_started"
+            android:id="@+id/action_fragment_welcome_to_fragment_getting_started"
             app:destination="@id/fragment_getting_started" />
         <action
-            android:id="@+id/action_fragment_welcome_fragment_sign_in"
+            android:id="@+id/action_fragment_welcome_to_fragment_sign_in"
             app:destination="@id/fragment_sign_in" />
-
     </fragment>
 
     <fragment
@@ -35,12 +33,24 @@
         <action
             android:id="@+id/action_fragment_getting_started_to_fragment_verification_method"
             app:destination="@id/fragment_verification_method" />
+        <action
+            android:id="@+id/action_fragment_getting_started_to_fragment_sign_in"
+            app:destination="@id/fragment_sign_in"
+            app:popUpTo="@id/fragment_welcome" />
     </fragment>
 
     <fragment
         android:id="@+id/fragment_sign_in"
-        android:name="com.goodaction.presentation.authentication.fragments.SignInFragment"
-        tools:layout="@layout/fragment_sign_in" />
+        android:name="com.goodaction.presentation.authentication.signin.SignInFragment"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_fragment_sign_in_to_fragment_getting_started"
+            app:destination="@id/fragment_getting_started"
+            app:popUpTo="@id/fragment_welcome" />
+        <action
+            android:id="@+id/action_fragment_sign_in_to_fragment_forgot_password"
+            app:destination="@id/fragment_forgot_password" />
+    </fragment>
 
     <fragment
         android:id="@+id/fragment_verification_method"
@@ -55,10 +65,10 @@
             android:defaultValue="+2349011223344"
             app:argType="string" />
         <action
-            android:id="@+id/fragment_verification_method_to_fragment_otp"
+            android:id="@+id/action_fragment_verification_method_to_fragment_otp"
             app:destination="@id/fragment_otp" />
         <action
-            android:id="@+id/fragment_verification_method_to_fragment_check_email"
+            android:id="@+id/action_fragment_verification_method_to_fragment_check_email"
             app:destination="@id/fragment_check_email" />
     </fragment>
 
@@ -70,6 +80,12 @@
             android:name="phone"
             android:defaultValue="+2340199283747"
             app:argType="string" />
+        <argument
+            android:name="from"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_fragment_otp_to_fragment_reset_password"
+            app:destination="@id/fragment_reset_password" />
     </fragment>
 
     <fragment
@@ -80,6 +96,37 @@
             android:name="email"
             android:defaultValue="ayokunle@goodaction.com"
             app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_forgot_password"
+        android:name="com.goodaction.presentation.authentication.password.ForgotPasswordFragment"
+        tools:layout="@layout/fragment_forgot_password">
+        <action
+            android:id="@+id/action_fragment_forgot_password_to_fragment_otp"
+            app:destination="@id/fragment_otp" />
+        <action
+            android:id="@+id/action_fragment_forgot_password_to_fragment_check_email"
+            app:destination="@id/fragment_check_email" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_reset_password"
+        android:name="com.goodaction.presentation.authentication.password.ResetPasswordFragment"
+        tools:layout="@layout/fragment_reset_password">
+        <action
+            android:id="@+id/action_fragment_reset_password_to_fragment_reset_password_successful"
+            app:destination="@id/fragment_reset_password_successful" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_reset_password_successful"
+        android:name="com.goodaction.presentation.authentication.password.ResetPasswordSuccessfulFragment"
+        tools:layout="@layout/fragment_reset_password_successful">
+        <action
+            android:id="@+id/action_fragment_reset_password_successful_to_fragment_sign_in"
+            app:destination="@id/fragment_sign_in"
+            app:popUpTo="@id/fragment_welcome" />
     </fragment>
 
 </navigation>

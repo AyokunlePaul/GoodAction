@@ -266,14 +266,14 @@
         android:layout_marginTop="@dimen/good_action_normal_margin"
         android:text="@string/create_account"
         app:backgroundTint="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/materialButton"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
         app:layout_constraintEnd_toStartOf="@+id/guideline_two"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline_one"
         app:layout_constraintTop_toBottomOf="@+id/cb_terms_and_policy" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton"
+        android:id="@+id/btn_login"
         style="?borderlessButtonStyle"
         android:layout_marginTop="@dimen/good_action_normal_margin"
         android:text="@string/have_an_account"

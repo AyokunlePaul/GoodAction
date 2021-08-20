@@ -1,4 +1,4 @@
-package com.goodaction.presentation.authentication.fragments
+package com.goodaction.presentation.authentication.signin
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams
 import androidx.core.view.doOnLayout
 import androidx.core.view.updateLayoutParams
+import androidx.fragment.app.viewModels
 import androidx.transition.TransitionManager
 import com.goodaction.base.BaseFragment
 import com.goodaction.databinding.FragmentSignInBinding
@@ -18,7 +19,9 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SignInFragment : BaseFragment<FragmentSignInBinding>() {
 
-    private var tabIndicationWidth: Int = 0
+    private val viewModel by viewModels<SignFragmentViewModel>()
+
+    private var tabIndicationWidth = 0
 
     override fun getRootBinding(
         inflater: LayoutInflater,
@@ -30,6 +33,18 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setupTabIndicator()
         setupTabClickListener()
+        with(binding) {
+            cvCreateAccount.setOnClickListener {
+                val direction =
+                    SignInFragmentDirections.actionFragmentSignInToFragmentGettingStarted()
+                navigate(direction)
+            }
+            tvForgotPassword.setOnClickListener {
+                val direction =
+                    SignInFragmentDirections.actionFragmentSignInToFragmentForgotPassword()
+                navigate(direction)
+            }
+        }
     }
 
     private fun setupTabIndicator() {
@@ -60,6 +75,6 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>() {
     }
 
     companion object {
-        private const val TRAILING_MARGIN = 8
+        private const val TRAILING_MARGIN = 16
     }
 }
